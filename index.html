@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Film Database</title>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -17,7 +16,6 @@
         <input id="title" type="text" placeholder="Title">
         <input id="year" type="text" placeholder="Year of Release">
         <input id="director" type="text" placeholder="Director">
-        <input id="actors" type="text" placeholder="Actors">
         <input id="genre" type="text" placeholder="Genre">
         <input id="runtime" type="text" placeholder="Runtime (in minutes)">
         <input id="score" type="text" placeholder="Score (out of 5)">
@@ -31,18 +29,17 @@
         </form>
 
         <form id="filter-by-score">
-            <input id="filter-score" type="text" placeholder="Filter by score">
+            <input id="filter-score" type="number" placeholder="Filter by score">
             <button>Filter</button>
         </form>
 
-        <button id="show-all" type="button">Show all films</button>
+        <button id="show-all" type="button">Show all</button>
     </div>
 
     <div id="headers">
         <div>Title</div>
         <div>Year of Release</div>
         <div>Director</div>
-        <div>Actors</div>
         <div>Genre</div>
         <div>Runtime</div>
         <div>Score</div>

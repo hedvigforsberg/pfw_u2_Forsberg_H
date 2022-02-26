@@ -3,22 +3,11 @@
 // NOTE: Database-add function is not working.
 // NOTE: Database-remove function is not working.
 
-function createNewFilm(
-  id,
-  title,
-  year,
-  director,
-  actors,
-  genre,
-  runtime,
-  score
-) {
+function createNewFilm(title, year, director, genre, runtime, score) {
   let film = {
-    id: id,
     title: title,
     year: year,
     director: director,
-    actors: actors,
     genre: genre,
     runtime: runtime,
     score: score,
@@ -31,21 +20,21 @@ function addFilmToDatabase(database, film) {
   database.push(film);
 }
 
-function removeFilmById(database, id) {
-  for (let i = 0; i < database.length; i++) {
-    let film = database[i];
+function removeFilmById(films, id) {
+  for (let i = 0; i < films.length; i++) {
+    let film = films[i];
 
     if (film.id == id) {
-      database.splice(i, 1);
+      dogs.splice(i, 1);
       return;
     }
   }
 }
 
-function getFilmsByGenre(database, genre) {
+function getFilmsByGenre(films, genre) {
   let filmsByGenre = [];
 
-  for (let i = 0; i < database.length; i++) {
+  for (let film of films) {
     if (film.genre.toLowerCase() == genre.toLowerCase()) {
       filmsByGenre.push(film);
     }
@@ -54,14 +43,16 @@ function getFilmsByGenre(database, genre) {
   return filmsByGenre;
 }
 
-function getFilmsByScore(database, score) {
+function getFilmsByScore(films, score) {
   let filmsByScore = [];
 
-  for (let i = 0; i < database.length; i++) {
-    if (film.score.toLowerCase() == score.toLowerCase()) {
+  for (let film of films) {
+    if (film.score == score) {
       filmsByScore.push(film);
     }
   }
+
+  return filmsByScore;
 }
 
 function renderFilm(film) {
@@ -74,7 +65,6 @@ function renderFilm(film) {
         <div>${film.title}</div>
         <div>${film.year}</div>
         <div>${film.director}</div>
-        <div>${film.actors}</div>
         <div>${film.genre}</div>
         <div>${film.runtime}</div>
         <div>${film.score}</div>
@@ -103,21 +93,11 @@ function onAddFilmSubmit(event) {
   let title = document.getElementById("title").value;
   let year = Number(document.getElementById("year").value);
   let director = document.getElementById("director").value;
-  let actors = document.getElementById("actors").value;
   let genre = document.getElementById("genre").value;
   let runtime = Number(document.getElementById("runtime").value);
   let score = Number(document.getElementById("score").value);
 
-  let film = createNewFilm(
-    id,
-    title,
-    year,
-    director,
-    actors,
-    genre,
-    runtime,
-    score
-  );
+  let film = createNewFilm(id, title, year, director, genre, runtime, score);
 
   film.id = database[database.length - 1].id + 1;
 
@@ -183,12 +163,6 @@ function setFilterFilmHandlers() {
   genreForm.addEventListener("submit", onFilterByGenreSubmit);
   scoreForm.addEventListener("submit", onFilterByScoreSubmit);
   showAll.addEventListener("click", onShowAllClick);
-}
-
-function addSpace(database) {
-  for (let i = 0; i < database.length; i++) {
-    database[i].actors.join(" ");
-  }
 }
 
 renderFilms(database);
