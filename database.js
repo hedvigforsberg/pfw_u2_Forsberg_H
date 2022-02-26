@@ -12,8 +12,7 @@ let database = [
     ],
     genre: ["Action", "Comedy"],
     runtime: 129,
-    oscarAward: false,
-    studio: "20th Century Fox",
+    score: 5,
   },
 
   {
@@ -30,8 +29,7 @@ let database = [
     ],
     genre: ["Comedy, Fantasy"],
     runtime: 107,
-    oscarAward: false,
-    studio: "Columbia Pictures",
+    score: 4,
   },
 
   {
@@ -42,20 +40,18 @@ let database = [
     actors: ["Taron Egerton", "Jamie Bell", "Richard Madden"],
     genre: ["Drama", "Music"],
     runtime: 121,
-    oscarAward: false,
-    studio: "Paramount",
+    score: 4,
   },
 
   {
     id: 4,
-    title: "La La Land",
-    year: 2016,
-    director: "Damien Chazelle",
-    actors: ["Emma Stone", "Ryan Gosling"],
-    genre: ["Music", "Drama", "Romance"],
-    runtime: 129,
-    oscarAward: false,
-    studio: "Summit Entertainment",
+    title: "Spider-Man: Into the Spider-Verse",
+    year: 2018,
+    director: ["Rodney Rothman", "Peter Ramsey", "Bob Persichetti"],
+    actors: ["Shameik Moore", "Jake Johnson", "Hailee Steinfeld"],
+    genre: ["Animation", "Superheroes"],
+    runtime: 117,
+    score: 5
   },
 
   {
@@ -72,8 +68,7 @@ let database = [
     ],
     genre: ["Animation", "Family"],
     runtime: 85,
-    oscarAward: true,
-    studio: "Disney",
+    score: 5,
   },
 
   {
@@ -90,8 +85,7 @@ let database = [
     ],
     genre: ["Fantasy", "Adventure"],
     runtime: 141,
-    oscarAward: false,
-    studio: "Warner Bros. Pictures",
+    score: 4,
   },
 
   {
@@ -102,43 +96,39 @@ let database = [
     actors: ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong", "Choi Woo-shik"],
     genre: ["Drama", "Thriller"],
     runtime: 133,
-    oscarAward: true,
-    studio: "Barunson E&A",
+    score: 5
   },
 
   {
     id: 8,
-    title: "Logan",
-    year: 2017,
-    director: "James Mangold",
-    actors: ["Hugh Jackman", "Dafne Keen", "Patrick Stewart"],
+    title: "Godzilla vs. Kong",
+    year: 2021,
+    director: "Adam Wingard",
+    actors: ["Alexander Skarsgård", "Millie Bobby Brown", "Rebecca Hall"],
     genre: ["Action", "Science Fiction"],
-    runtime: 137,
-    oscarAward: false,
-    studio: "20th Century Fox",
+    runtime: 113,
+    score: 2,
   },
 
   {
     id: 9,
-    title: "The Shawshank Redemption",
-    year: 1994,
-    director: "Frank Darabont",
-    actors: ["Tim Robbins", "Morgan Freeman"],
-    genre: ["Drama", "Crime"],
-    runtime: 142,
-    oscarAward: true,
-    studio: "Castle Rock Entertainment",
+    title: "Halloween",
+    year: 2018,
+    director: "David Gordon Green",
+    actors: ["Jamie Lee Curtis", "Nick Castle", "Judy Greer", "Andi Matichak"],
+    genre: ["Horror", "Thriller"],
+    runtime: 106,
+    score: 3,
   },
 
   {
     id: 10,
-    title: "Knives Out",
-    year: 2019,
-    director: "Rian Johnson",
-    actors: ["Ana de Armas", "Daniel Craig", "Chris Evans", "Jamie Lee Curtis"],
-    genre: ["Mystery", "Comedy"],
-    runtime: 131,
-    oscarAward: false,
-    studio: "Lionsgate",
+    title: "Uncharted",
+    year: 2022,
+    director: "Ruben Fleischer",
+    actors: ["Tom Holland", "Mark Wahlberg", "Sophia Ali"],
+    genre: ["Adventure", "Action"],
+    runtime: 116,
+    score: 3,
   },
 ];
