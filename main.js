@@ -128,63 +128,70 @@ function onAddFilmSubmit(event) {
   form.reset();
 }
 
-function setAddFilmHandler () {
-    let form = document.getElementById("add-film-form");
-    form.addEventListener("submit", onAddFilmSubmit);
+function setAddFilmHandler() {
+  let form = document.getElementById("add-film-form");
+  form.addEventListener("submit", onAddFilmSubmit);
 }
 
-function onRemoveFilmClick (event) {
-    let button = event.target;
-    let id = button.parentElement.id;
+function onRemoveFilmClick(event) {
+  let button = event.target;
+  let id = button.parentElement.id;
 
-    removeDogById(database, id);
-    renderFilms(database);
+  removeFilmById(database, id);
+  renderFilms(database);
 }
 
 function setRemoveFilmHandlers() {
-    let buttons = document.querySelectorAll(".film button");
+  let buttons = document.querySelectorAll(".film button");
 
-    for (let button of buttons) {
-        button.addEventListener("click", onRemoveFilmClick);
-    }
+  for (let button of buttons) {
+    button.addEventListener("click", onRemoveFilmClick);
+  }
 }
 
 function onFilterByGenreSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    let genre = document.getElementById("filter-genre").value;
+  let genre = document.getElementById("filter-genre").value;
 
-    let films = getFilmsByGenre(database, genre);
+  let films = getFilmsByGenre(database, genre);
 
-    renderFilms(films);
+  renderFilms(films);
 }
 
-function onFilterByScoreSubmit (event) {
-    event.preventDefault();
+function onFilterByScoreSubmit(event) {
+  event.preventDefault();
 
-    let score = document.getElementById("filter-score").value;
+  let score = document.getElementById("filter-score").value;
 
-    let films = getFilmsByScore(database, score);
+  let films = getFilmsByScore(database, score);
 
-    renderFilms(films);
+  renderFilms(films);
 }
 
-function onShowAllClick () {
-    document.getElementById("filter-genre").value = "";
-    document.getElementById("filter-score").value = "";
-    renderFilms(database);
+function onShowAllClick() {
+  document.getElementById("filter-genre").value = "";
+  document.getElementById("filter-score").value = "";
+  renderFilms(database);
 }
 
-function setFilterFilmHandlers () {
-    let genreForm = document.getElementById("filter-by-genre");
-    let scoreForm = document.getElementById("filter-by-score");
-    let showAll = document.getElementById("show-all");
+function setFilterFilmHandlers() {
+  let genreForm = document.getElementById("filter-by-genre");
+  let scoreForm = document.getElementById("filter-by-score");
+  let showAll = document.getElementById("show-all");
 
-    genreForm.addEventListener("submit", onFilterByGenreSubmit);
-    scoreForm.addEventListener("submit", onFilterByScoreSubmit);
-    showAll.addEventListener("click", onShowAllClick);
+  genreForm.addEventListener("submit", onFilterByGenreSubmit);
+  scoreForm.addEventListener("submit", onFilterByScoreSubmit);
+  showAll.addEventListener("click", onShowAllClick);
+}
+
+function addSpace(database) {
+  for (let i = 0; i < database.length; i++) {
+    database[i].actors.join(" ");
+  }
 }
 
 renderFilms(database);
 setAddFilmHandler();
 setFilterFilmHandlers();
+addSpace(database);
