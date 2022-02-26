@@ -80,12 +80,12 @@ function renderFilm(film) {
 }
 
 function renderFilms(films) {
-  let films = document.getElementById("films");
-  films.innerHTML = "";
+  let filmsElement = document.getElementById("films");
+  filmsElement.innerHTML = "";
 
   for (let i = 0; i < films.length; i++) {
-    let film = renderFilm(film);
-    films.appendChild(film);
+    let filmElement = renderFilm(film);
+    filmsElement.appendChild(filmElement);
   }
 
   setRemoveFilmHandlers();
