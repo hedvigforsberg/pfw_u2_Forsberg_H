@@ -1,4 +1,28 @@
 body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#add {
+
+}
+
+#headers {
+
+}
+
+#films {
+
+}
+
+.film {
+
+}
+
+.film div {
+
 }
