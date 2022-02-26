@@ -24,6 +24,32 @@
         <button>Add</button>
     </form>
 
+    <div id="filters">
+        <form id="filter-by-genre">
+            <input id="filter-genre" type="text" placeholder="Filter by genre">
+            <button>Filter</button>
+        </form>
+
+        <form id="filter-by-score">
+            <input id="filter-score" type="text" placeholder="Filter by score">
+            <button>Filter</button>
+        </form>
+
+        <button id="show-all" type="button">Show all films</button>
+    </div>
+
+    <div id="headers">
+        <div>Title</div>
+        <div>Year of Release</div>
+        <div>Director</div>
+        <div>Actors</div>
+        <div>Genre</div>
+        <div>Runtime</div>
+        <div>Score</div>
+    </div>
+
+    <div id="films"></div>
+
     <script src="database.js"></script>
     <script src="main.js"></script>
 </body>

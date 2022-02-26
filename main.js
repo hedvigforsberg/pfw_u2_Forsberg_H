@@ -83,7 +83,7 @@ function renderFilms(films) {
   let filmsElement = document.getElementById("films");
   filmsElement.innerHTML = "";
 
-  for (let i = 0; i < films.length; i++) {
+  for (let film of films) {
     let filmElement = renderFilm(film);
     filmsElement.appendChild(filmElement);
   }
