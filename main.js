@@ -63,13 +63,13 @@ function renderFilm(film) {
   div.id = film.id;
 
   div.innerHTML = `
-        <div>${film.id}</div>
+        <div>${film.id}.</div>
         <div>${film.title}</div>
         <div>${film.year}</div>
         <div>${film.director}</div>
         <div>${film.genre}</div>
-        <div>${film.runtime}</div>
-        <div>${film.score}</div>
+        <div>${film.runtime} minutes</div>
+        <div>${film.score} out of 5</div>
         <button type="button">Remove</button>
     `;
 
