@@ -1,5 +1,3 @@
-"use strict";
-
 // FUNCTIONS
 
 // NOTE: Database-add function is not working.
@@ -105,7 +103,7 @@ function onAddFilmSubmit(event) {
   addFilmToDatabase(database, film);
   renderFilms(database);
 
-  let form = document.getElementById("add-film-form");
+  let form = document.querySelector("form");
   form.reset();
 }
 
@@ -138,6 +136,10 @@ function onFilterByGenreSubmit(event) {
   let films = getFilmsByGenre(database, genre);
 
   renderFilms(films);
+
+  let form = document.
+
+  form.reset();
 }
 
 function onFilterByScoreSubmit(event) {
