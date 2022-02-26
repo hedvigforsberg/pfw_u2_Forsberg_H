@@ -1,9 +1,21 @@
 "use strict";
 
-// FUNCTIONS
+// GitHub Repository
 
-// NOTE: Database-add function is not working.
-// NOTE: Database-remove function is not working.
+// FUNCTION DECLARATIONS (in alphabetical order)
+
+function addFilmToDatabase(database, film) {
+  database.push(film);
+}
+
+function checkForm() {
+  let form = document.querySelectorAll.input.value;
+
+  if (form == "") {
+    alert("No");
+    return false;
+  }
+}
 
 function createNewFilm(title, year, director, genre, runtime, score) {
   let film = {
@@ -16,21 +28,6 @@ function createNewFilm(title, year, director, genre, runtime, score) {
   };
 
   return film;
-}
-
-function addFilmToDatabase(database, film) {
-  database.push(film);
-}
-
-function removeFilmById(films, id) {
-  for (let i = 0; i < films.length; i++) {
-    let film = films[i];
-
-    if (film.id == id) {
-      films.splice(i, 1);
-      return;
-    }
-  }
 }
 
 function getFilmsByGenre(films, genre) {
@@ -55,6 +52,73 @@ function getFilmsByScore(films, score) {
   }
 
   return filmsByScore;
+}
+
+function onAddFilmSubmit(event) {
+  event.preventDefault();
+
+  let title = document.getElementById("title").value;
+  let year = Number(document.getElementById("year").value);
+  let director = document.getElementById("director").value;
+  let genre = document.getElementById("genre").value;
+  let runtime = Number(document.getElementById("runtime").value);
+  let score = Number(document.getElementById("score").value);
+
+  let film = createNewFilm(title, year, director, genre, runtime, score);
+
+  film.id = database[database.length - 1].id + 1;
+
+  addFilmToDatabase(database, film);
+  renderFilms(database);
+  checkForm();
+
+  let form = document.getElementById("add-film-form");
+  form.reset();
+}
+
+function onFilterByGenreSubmit(event) {
+  event.preventDefault();
+
+  let genre = document.getElementById("filter-genre").value;
+
+  let films = getFilmsByGenre(database, genre);
+
+  renderFilms(films);
+}
+
+function onFilterByScoreSubmit(event) {
+  event.preventDefault();
+
+  let score = document.getElementById("filter-score").value;
+
+  let films = getFilmsByScore(database, score);
+
+  renderFilms(films);
+}
+
+function onRemoveFilmClick(event) {
+  let button = event.target;
+  let id = button.parentElement.id;
+
+  removeFilmById(database, id);
+  renderFilms(database);
+}
+
+function onShowAllClick() {
+  document.getElementById("filter-genre").value = "";
+  document.getElementById("filter-score").value = "";
+  renderFilms(database);
+}
+
+function removeFilmById(films, id) {
+  for (let i = 0; i < films.length; i++) {
+    let film = films[i];
+
+    if (film.id == id) {
+      films.splice(i, 1);
+      return;
+    }
+  }
 }
 
 function renderFilm(film) {
@@ -88,72 +152,9 @@ function renderFilms(films) {
   setRemoveFilmHandlers();
 }
 
-function onAddFilmSubmit(event) {
-  event.preventDefault();
-
-  let title = document.getElementById("title").value;
-  let year = Number(document.getElementById("year").value);
-  let director = document.getElementById("director").value;
-  let genre = document.getElementById("genre").value;
-  let runtime = Number(document.getElementById("runtime").value);
-  let score = Number(document.getElementById("score").value);
-
-  let film = createNewFilm(title, year, director, genre, runtime, score);
-
-  film.id = database[database.length - 1].id + 1;
-
-  addFilmToDatabase(database, film);
-  renderFilms(database);
-
-  let form = document.getElementById("add-film-form");
-  form.reset();
-}
-
 function setAddFilmHandler() {
   let form = document.getElementById("add-film-form");
   form.addEventListener("submit", onAddFilmSubmit);
-}
-
-function onRemoveFilmClick(event) {
-  let button = event.target;
-  let id = button.parentElement.id;
-
-  removeFilmById(database, id);
-  renderFilms(database);
-}
-
-function setRemoveFilmHandlers() {
-  let buttons = document.querySelectorAll(".film button");
-
-  for (let button of buttons) {
-    button.addEventListener("click", onRemoveFilmClick);
-  }
-}
-
-function onFilterByGenreSubmit(event) {
-  event.preventDefault();
-
-  let genre = document.getElementById("filter-genre").value;
-
-  let films = getFilmsByGenre(database, genre);
-
-  renderFilms(films);
-}
-
-function onFilterByScoreSubmit(event) {
-  event.preventDefault();
-
-  let score = document.getElementById("filter-score").value;
-
-  let films = getFilmsByScore(database, score);
-
-  renderFilms(films);
-}
-
-function onShowAllClick() {
-  document.getElementById("filter-genre").value = "";
-  document.getElementById("filter-score").value = "";
-  renderFilms(database);
 }
 
 function setFilterFilmHandlers() {
@@ -165,6 +166,18 @@ function setFilterFilmHandlers() {
   scoreForm.addEventListener("submit", onFilterByScoreSubmit);
   showAll.addEventListener("click", onShowAllClick);
 }
+
+function setRemoveFilmHandlers() {
+  let buttons = document.querySelectorAll(".film button");
+
+  for (let button of buttons) {
+    button.addEventListener("click", onRemoveFilmClick);
+  }
+}
+
+// EVENTLISTENERS FOR EXISTING HTML-ELEMENTS
+
+// DIRECT CODE
 
 renderFilms(database);
 setAddFilmHandler();
