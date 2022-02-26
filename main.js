@@ -1,3 +1,8 @@
+// FUNCTIONS
+
+// NOTE: Database-add function is not working.
+// NOTE: Database-remove function is not working.
+
 function createNewFilm(
   id,
   title,
