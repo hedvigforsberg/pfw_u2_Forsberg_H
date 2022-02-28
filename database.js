@@ -31,12 +31,12 @@ let database = [
 
   {
     id: 4,
-    title: "Spider-Man: Into the Spider-Verse",
-    year: 2018,
-    director: "Rodney Rothman",
-    genre: "Animation",
-    runtime: 117,
-    score: 5
+    title: "10 Things I Hate About You",
+    year: 1999,
+    director: "Gil Junger",
+    genre: "Romance",
+    runtime: 97,
+    score: 4,
   },
 
   {
@@ -51,11 +51,11 @@ let database = [
 
   {
     id: 6,
-    title: "Harry Potter & The Prisoner of Azkaban",
-    year: 2004,
-    director: "Alfonso Cuarón",
-    genre: "Fantasy",
-    runtime: 141,
+    title: "Home Alone",
+    year: 1990,
+    director: "Chris Columbus",
+    genre: "Comedy",
+    runtime: 103,
     score: 4,
   },
 

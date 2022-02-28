@@ -1,16 +1,45 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+
+  --mainBackgroundColor: #14181c;
+  --mainColor: #e8ecee;
+  --secondaryColor: #1e252c;
+  --accentColor: ;
+  --textColor: #ffffff;
 }
 
 body {
   height: 100%;
-  margin: 0 auto;
   max-width: 1000px;
+  margin: auto;
+  width: 100vw;
+  background-color: var(--mainBackgroundColor);
+  color: #ffffff;
 }
+
+/* 1d1f1e */
 
 h1 {
   text-align: center;
+  font-size: 2.5rem;
+  color: var(--mainColor);
+  margin: 30px 0 30px 0;
+}
+
+input {
+  background-color: var(--secondaryColor);
+  color: var(--textColor);
+  border: none;
+  padding: 10px;
+}
+
+input:hover {
+  cursor: text;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 #add-film-form {
@@ -21,7 +50,12 @@ h1 {
 
 #add-film-form button {
   width: 100px;
-  grid-column: 2;
+  grid-column: 3;
+  border: none;
+  background-color: var(--secondaryColor);
+  color: var(--textColor);
+  padding: 8px;
+  
 }
 
 #filters {
@@ -32,7 +66,10 @@ h1 {
 }
 
 #filters button {
-    width: 100%;
+  width: 100%;
+  background-color: var(--secondaryColor);
+  color: var(--textColor);  
+  border: none;
 }
 
 #filter-by-genre,
@@ -43,7 +80,7 @@ h1 {
 
 #filter-by-genre button,
 #filter-by-score button {
-    margin: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
 }
 
 #headers {
@@ -55,15 +92,18 @@ h1 {
 
 #headers div {
   text-align: center;
+  border-bottom: solid 1px --accentColor;
+  padding-bottom: 8px;
 }
 
 #headers div:nth-child(1) {
-    grid-column: 2;
+  grid-column: 2;
 }
 
 #films {
-  background: beige;
-  border: solid 5px black;
+  background-color: #999498;
+  border: none;
+  margin-bottom: 50px;
 }
 
 .film {
@@ -72,14 +112,17 @@ h1 {
   height: 100%;
   padding: 10px 10px;
   gap: 25px;
-  border-bottom: solid 1px black;
+  /* border-bottom: solid 1px #c34421; */
   place-items: center;
   text-align: center;
 }
 
-
 .film:last-child {
   border-bottom: none;
+}
+
+.film:nth-child(odd) {
+  background-color: #858084;
 }
 
 .film div {

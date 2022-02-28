@@ -1,21 +1,21 @@
 "use strict";
 
-// GitHub Repository
+// GitHub Repository:
 
-// FUNCTION DECLARATIONS (in alphabetical order)
+// FUNCTION DECLARATIONS
 
 function addFilmToDatabase(database, film) {
   database.push(film);
 }
 
-function checkForm() {
-  let form = document.querySelectorAll.input.value;
+// function checkForm() {
+//   let form = document.querySelectorAll.input;
 
-  if (form == "") {
-    alert("No");
-    return false;
-  }
-}
+//   if (form == "") {
+//     alert("No");
+//     return false;
+//   }
+// }
 
 function createNewFilm(title, year, director, genre, runtime, score) {
   let film = {
@@ -70,7 +70,6 @@ function onAddFilmSubmit(event) {
 
   addFilmToDatabase(database, film);
   renderFilms(database);
-  checkForm();
 
   let form = document.getElementById("add-film-form");
   form.reset();
@@ -175,10 +174,19 @@ function setRemoveFilmHandlers() {
   }
 }
 
-// EVENTLISTENERS FOR EXISTING HTML-ELEMENTS
-
 // DIRECT CODE
 
 renderFilms(database);
 setAddFilmHandler();
 setFilterFilmHandlers();
+
+
+// CHECKLIST
+
+// add data X
+// alert if no data in form
+// remove data X
+// confirm before remove
+// filter data X
+// row numbers X
+// data in seperate database-js X
