@@ -8,13 +8,8 @@ function addFilmToDatabase(database, film) {
   database.push(film);
 }
 
-// function checkForm() {
-//   let form = document.forms["form"].value;
+// function checkForEmptyForm () {
 
-//   if (form == "") {
-//     alert("Form must be filled in!");
-//     return false;
-//   }
 // }
 
 function createNewFilm(title, year, director, genre, runtime, score) {
@@ -70,7 +65,7 @@ function onAddFilmSubmit(event) {
 
   addFilmToDatabase(database, film);
   renderFilms(database);
-  checkForm();
+  // checkForEmptyForm();
 
   let form = document.getElementById("add-film-form");
   form.reset();
@@ -180,7 +175,6 @@ function setRemoveFilmHandlers() {
 renderFilms(database);
 setAddFilmHandler();
 setFilterFilmHandlers();
-
 
 // CHECKLIST
 
