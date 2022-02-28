@@ -5,7 +5,7 @@
   --mainBackgroundColor: #14181c;
   --mainColor: #e8ecee;
   --secondaryColor: #1e252c;
-  --accentColor: ;
+  --accentColor: #7786c9;
   --textColor: #ffffff;
 }
 
@@ -17,8 +17,6 @@ body {
   background-color: var(--mainBackgroundColor);
   color: #ffffff;
 }
-
-/* 1d1f1e */
 
 h1 {
   text-align: center;
@@ -50,7 +48,7 @@ button:hover {
 
 #add-film-form button {
   width: 100px;
-  grid-column: 3;
+  grid-column: 1;
   border: none;
   background-color: var(--secondaryColor);
   color: var(--textColor);
@@ -101,7 +99,7 @@ button:hover {
 }
 
 #films {
-  background-color: #999498;
+  background-color: #506074;
   border: none;
   margin-bottom: 50px;
 }
@@ -122,7 +120,7 @@ button:hover {
 }
 
 .film:nth-child(odd) {
-  background-color: #858084;
+  background-color: #65788d;
 }
 
 .film div {

@@ -9,10 +9,10 @@ function addFilmToDatabase(database, film) {
 }
 
 // function checkForm() {
-//   let form = document.querySelectorAll.input;
+//   let form = document.forms["form"].value;
 
 //   if (form == "") {
-//     alert("No");
+//     alert("Form must be filled in!");
 //     return false;
 //   }
 // }
@@ -70,6 +70,7 @@ function onAddFilmSubmit(event) {
 
   addFilmToDatabase(database, film);
   renderFilms(database);
+  checkForm();
 
   let form = document.getElementById("add-film-form");
   form.reset();

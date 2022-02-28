@@ -15,13 +15,13 @@
 <body>
     <h1>Film Database</h1>
 
-    <form id="add-film-form">
-        <input id="title" type="text" placeholder="Title">
-        <input id="year" type="number" max=2030 min=1895 placeholder="Year of Release">
-        <input id="director" type="text" placeholder="Director">
-        <input id="genre" type="text" placeholder="Genre">
-        <input id="runtime" type="number" min=0 placeholder="Runtime (in minutes)">
-        <input id="score" type="number" placeholder="Score (out of 5)">
+    <form id="add-film-form" name="form" onsubmit="return checkForm()" required>
+        <input id="title" name="ftitle" type="text" placeholder="Title">
+        <input id="year" name="fyear" type="number" max=2030 min=1895 placeholder="Year of Release">
+        <input id="director" name="fdirector" type="text" placeholder="Director">
+        <input id="genre" name="fgenre" type="text" placeholder="Genre">
+        <input id="runtime" name="fruntime" type="number" min=0 placeholder="Runtime (in minutes)">
+        <input id="score" name="fscore" type="number" placeholder="Score (out of 5)">
         <button>Add</button>
     </form>
 
