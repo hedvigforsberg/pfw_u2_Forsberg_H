@@ -76,8 +76,8 @@ function onAddFilmSubmit(event) {
   addFilmToDatabase(database, film);
   renderFilms(database);
 
-  let emptyForm = document.getElementById("add-film-form");
-  emptyForm.reset();
+  let form = document.getElementById("add-film-form");
+  form.reset();
 }
 
 function onFilterByGenreSubmit(event) {
@@ -106,9 +106,9 @@ function onRemoveFilmClick(event) {
 
   if (confirm("Are you sure you want to delete this film?") == true) {
     removeFilmById(database, id);
-  } else {return false};
-
-
+  } else {
+    return false;
+  }
 
   // removeFilmById(database, id);
   renderFilms(database);
