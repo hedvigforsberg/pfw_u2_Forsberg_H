@@ -8,10 +8,6 @@ function addFilmToDatabase(database, film) {
   database.push(film);
 }
 
-// function checkForEmptyForm () {
-
-// }
-
 function createNewFilm(title, year, director, genre, runtime, score) {
   let film = {
     title: title,
@@ -59,16 +55,29 @@ function onAddFilmSubmit(event) {
   let runtime = Number(document.getElementById("runtime").value);
   let score = Number(document.getElementById("score").value);
 
+  if (title == "") {
+    return alert("Please fill in all of the boxes!");
+  } else if (year == 0) {
+    return alert("Please fill in all of the boxes!");
+  } else if (director == "") {
+    return alert("Please fill in all of the boxes!");
+  } else if (genre == "") {
+    return alert("Please fill in all of the boxes!");
+  } else if (runtime == 0) {
+    return alert("Please fill in all of the boxes!");
+  } else if (score == 0) {
+    return alert("Please fill in all of the boxes!");
+  }
+
   let film = createNewFilm(title, year, director, genre, runtime, score);
 
   film.id = database[database.length - 1].id + 1;
 
   addFilmToDatabase(database, film);
   renderFilms(database);
-  // checkForEmptyForm();
 
-  let form = document.getElementById("add-film-form");
-  form.reset();
+  let emptyForm = document.getElementById("add-film-form");
+  emptyForm.reset();
 }
 
 function onFilterByGenreSubmit(event) {
@@ -95,7 +104,13 @@ function onRemoveFilmClick(event) {
   let button = event.target;
   let id = button.parentElement.id;
 
-  removeFilmById(database, id);
+  if (confirm("Are you sure you want to delete this film?") == true) {
+    removeFilmById(database, id);
+  } else {return false};
+
+
+
+  // removeFilmById(database, id);
   renderFilms(database);
 }
 
