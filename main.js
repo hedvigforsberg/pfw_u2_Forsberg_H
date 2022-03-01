@@ -137,7 +137,7 @@ function renderFilm(film) {
   div.id = film.id;
 
   div.innerHTML = `
-        <div>${film.id}.</div>
+        <li></li>
         <div>${film.title}</div>
         <div>${film.year}</div>
         <div>${film.director}</div>
@@ -194,9 +194,10 @@ setFilterFilmHandlers();
 // CHECKLIST
 
 // add data X
-// alert if no data in form
+// alert if no data in form X
 // remove data X
-// confirm before remove
+// confirm before remove X
 // filter data X
 // row numbers X
 // data in seperate database-js X
+// CSS-styling (for fun... mostly)
