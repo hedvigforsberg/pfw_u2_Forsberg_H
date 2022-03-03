@@ -60,7 +60,7 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 #filters button {
@@ -91,7 +91,7 @@ button:hover {
 #headers div {
   text-align: center;
   border-bottom: solid 1px --accentColor;
-  padding-bottom: 8px;
+  padding-top: 0px;
 }
 
 #headers div:nth-child(1) {
@@ -111,7 +111,6 @@ button:hover {
   padding: 20px;
   margin-left: -40px;
   gap: 25px;
-  /* border-bottom: solid 1px #c34421; */
   place-items: center;
   text-align: center;
 }
