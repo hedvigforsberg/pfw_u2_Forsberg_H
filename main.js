@@ -139,6 +139,11 @@ function removeFilmClick(event) {
     return false;
   }
 
+  // If-statement containing an alert if the user tries to delete the last film in the database.
+  if (database.length == 0) {
+      return alert("You need at least one film in your database!");
+  } 
+
   renderFilms(database);
 }
 
@@ -189,9 +194,9 @@ function renderFilms(films) {
     let filmElement = renderFilm(film);
     filmsElement.appendChild(filmElement);
   }
-
   // Runs the function 'setRemoveFilmHandlers' each time the films are rendered.
   setRemoveFilmHandlers();
+
 }
 
 // Function to set the other function 'addFilmSubmit' to the id 'add-film-form'. 
