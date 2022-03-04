@@ -59,7 +59,7 @@ function addFilmSubmit(event) {
   // Declare the variable form which contains the html-id "add-film-form".
   let form = document.getElementById("add-film-form");
 
-  // Use 'form.reset' in order the reset what is written in the form upon adding. 
+  // Use 'form.reset' in order the reset what is written in the form upon adding.
   form.reset();
 }
 
@@ -88,19 +88,18 @@ function filterByScoreSubmit(event) {
   let score = document.getElementById("filter-score").value;
 
   let films = getFilmsByScore(database, score);
-  
-  // Call the function renderFilms to only display the desired films. 
+
+  // Call the function renderFilms to only display the desired films.
   renderFilms(films);
 }
 
 // Function to get (or collect) only the films that have the correct genre-value.
 function getFilmsByGenre(films, genre) {
-  // Declare an empty array that we can add objects to. 
+  // Declare an empty array that we can add objects to.
   let filmsByGenre = [];
 
   // For-loop to loop through all films.
   for (let film of films) {
-    
     // If-statement in order to only get the film which genre is the same as the one we have requested.
     if (film.genre.toLowerCase() == genre.toLowerCase()) {
       filmsByGenre.push(film);
@@ -112,12 +111,11 @@ function getFilmsByGenre(films, genre) {
 
 // Function to get (or collect) only the films that have the correct score-value.
 function getFilmsByScore(films, score) {
-  // Declare an empty array that we can add objects to. 
+  // Declare an empty array that we can add objects to.
   let filmsByScore = [];
 
   // For-loop to loop through all films.
   for (let film of films) {
-
     // If-statement in order to only get the film which score is the same as the one we have requested.
     if (film.score == score) {
       filmsByScore.push(film);
@@ -141,20 +139,19 @@ function removeFilmClick(event) {
 
   // If-statement containing an alert if the user tries to delete the last film in the database.
   if (database.length == 0) {
-      return alert("You need at least one film in your database!");
-  } 
+    return alert("You need at least one film in your database!");
+  }
 
   renderFilms(database);
 }
 
 // Function to remove a film using its id.
 function removeFilmById(films, id) {
-
-  // For-loop in order to go through each film. 
+  // For-loop in order to go through each film.
   for (let i = 0; i < films.length; i++) {
     let film = films[i];
 
-    // If-statement which says that if the film.id is the same as id, the film is deleted from the database. 
+    // If-statement which says that if the film.id is the same as id, the film is deleted from the database.
     if (film.id == id) {
       films.splice(i, 1);
       return;
@@ -162,9 +159,9 @@ function removeFilmById(films, id) {
   }
 }
 
-// Function to render (display) a film in the visible list on the page. 
+// Function to render (display) a film in the visible list on the page.
 function renderFilm(film) {
-  // Declare a variable for the creation of a new div, adding a class and adding the id. 
+  // Declare a variable for the creation of a new div, adding a class and adding the id.
   let div = document.createElement("div");
   div.classList.add("film");
   div.id = film.id;
@@ -185,7 +182,7 @@ function renderFilm(film) {
   return div;
 }
 
-// Function to render (display) the films in the visible list on the page. 
+// Function to render (display) the films in the visible list on the page.
 function renderFilms(films) {
   let filmsElement = document.getElementById("films");
   filmsElement.innerHTML = "";
@@ -196,10 +193,9 @@ function renderFilms(films) {
   }
   // Runs the function 'setRemoveFilmHandlers' each time the films are rendered.
   setRemoveFilmHandlers();
-
 }
 
-// Function to set the other function 'addFilmSubmit' to the id 'add-film-form'. 
+// Function to set the other function 'addFilmSubmit' to the id 'add-film-form'.
 function setAddFilmHandler() {
   let form = document.getElementById("add-film-form");
   form.addEventListener("submit", addFilmSubmit);
@@ -226,7 +222,7 @@ function setRemoveFilmHandlers() {
   }
 }
 
-// Function to collect all films regardless of id and display (render) them all in the list. 
+// Function to collect all films regardless of id and display (render) them all in the list.
 function showAllClick() {
   document.getElementById("filter-genre").value = "";
   document.getElementById("filter-score").value = "";
