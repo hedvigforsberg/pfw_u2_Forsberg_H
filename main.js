@@ -233,14 +233,3 @@ function showAllClick() {
 renderFilms(database);
 setAddFilmHandler();
 setFilterFilmHandlers();
-
-// CHECKLIST
-
-// add data X
-// alert if no data in form X
-// remove data X
-// confirm before remove X
-// filter data X
-// row numbers X
-// data in seperate database-js X
-// CSS-styling (for fun... mostly)
