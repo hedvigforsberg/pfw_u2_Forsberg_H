@@ -1,6 +1,6 @@
 "use strict";
 
-// GitHub Repository:
+// GitHub Repository: https://github.com/hedvigforsberg/pfw_u2_Forsberg_H
 
 // FUNCTION DECLARATIONS
 
